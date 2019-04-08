@@ -19,25 +19,6 @@ class PersonController extends Controller
 	return response()->json($people);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-	    $request->validate([
-		    'email' => 'required',
-	    ]);
-
-	    $person = Person::create($request->all());
-
-	    return response()->json([
-		    'message' => 'Great success! New person created',
-		    'person' => $person
-	    ]);
-	    
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -47,6 +28,30 @@ class PersonController extends Controller
      */
     public function store(Request $request)
     {
+	    $request->validate([
+		    'email' => 'required'
+	    ]);
+	$request->interests = implode(',', $request->interests);
+	var_dump($request->interests);
+	    //$person = Person::create($request->all());
+	$personData = array( 
+		'first_name'=>$request->first_name, 
+		'last_name'=>$request->last_name, 
+		'age' => $request->age, 
+		'email' => $request->email, 
+		'interests' => $request->interests, 
+		'admission_date' => $request->admission_date, 
+		'admission_time'=> $request->admission_time, 
+		'is_active' => $request->is_active
+	);
+	var_dump($personData);
+		$person = Person::create($personData);
+
+
+	    return response()->json([
+		    'message' => 'Great success! New task created',
+		    'person' => $person
+	    ]);
         //
     }
 

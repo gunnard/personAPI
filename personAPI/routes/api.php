@@ -17,7 +17,7 @@ use Illuminate\Http\Request;
     return $request->user();
 });
  */
-Route::get('/people', 'PersonController@all')->name('people.all');
+Route::get('/people', 'PersonController@index')->name('people.all');
 
 Route::post('/people/person', 'PersonController@store')->name('people.store');
 
