@@ -1,11 +1,14 @@
 # personAPI
-git clone repository
+Installation and Usage:
 
-point web server to `personapi/htdocs`
 
-change `.env` to point to DB with credentials OR by default this will use laravel's `homestead` DB with default credentials
+1) `git clone` repository
 
-run `php artisan migrate`
+2) point web server `docroot` to `personapi/htdocs`
+
+3) change `.env` to point to DB with credentials OR by default this will use laravel's `homestead` DB with default credentials
+
+4) run `php artisan migrate` from `personAPI`directory
 
 endpoints:
 
@@ -18,3 +21,23 @@ endpoints:
 `put` - api/people/{id} - updates person info 
 
 `delete` - api/people/{id} - deletes person
+
+
+This was tested using `api/people` as `POST` with:
+`{
+    "first_name": "Jessica",
+    "last_name": "Doe",
+    "age": 37,
+    "email": "jesssica.doe@example.com",
+    "interests": [
+        "Archery",
+        "Painting",
+        "Paintball",
+        "Sportsball",
+        "Music"
+    ],
+    "admission_date": "2017-01-08",
+    "admission_time": "4:23pm",
+    "is_active": null
+}`
+
