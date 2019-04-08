@@ -34,20 +34,36 @@ endpoints:
 
 
 This was tested using `api/people` as `POST` with:
+
 `{
+
     "first_name": "Jessica",
+
     "last_name": "Doe",
+
     "age": 37,
+
     "email": "jesssica.doe@example.com",
+
     "interests": [
+
         "Archery",
+
         "Painting",
+
         "Paintball",
+
         "Sportsball",
+
         "Music"
+
     ],
+
     "admission_date": "2017-01-08",
+
     "admission_time": "4:23pm",
+
     "is_active": null
+
 }`
 
