@@ -31,6 +31,7 @@ class PersonController extends Controller
 	    $request->validate([
 		    'email' => 'required'
 	    ]);
+
 	$request->interests = implode(',', $request->interests);
 	var_dump($request->interests);
 	    //$person = Person::create($request->all());
@@ -87,9 +88,12 @@ class PersonController extends Controller
     public function update(Request $request, Person $person)
     {
 	    $request->validate([
-		    'is_active'       => 'nullable',
 		    'email' => 'required'
 	    ]);
+	    if ($request->interests)
+	    {
+		    $request->interests = implode(',', $request->interests);
+	    }
 
 	    $person->update($request->all());
 
