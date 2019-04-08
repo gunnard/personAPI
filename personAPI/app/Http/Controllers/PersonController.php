@@ -52,7 +52,7 @@ class PersonController extends Controller
 
 
 		return response()->json([
-			'message' => 'Great success! New task created',
+			'message' => 'Great success! New Person created',
 			'person' => $person
 		]);
 		//

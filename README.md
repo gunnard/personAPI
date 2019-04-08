@@ -1,4 +1,14 @@
 # personAPI
+Pre-requisites:
+
+`composer update`
+
+`composer global require laravel/installer`
+
+`laravel new personAPI`
+
+`cd personAPI` 
+
 Installation and Usage:
 
 
